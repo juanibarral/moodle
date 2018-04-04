@@ -12,11 +12,11 @@ Feature: Messaging preferences
   Scenario: Alter my message preferences
     Given I follow "Preferences" in the user menu
     And I click on "Message preferences" "link" in the "region-main" "region"
-    And I should see "On" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-state=loggedoff] .preference-state-status-container" "css_element"
-    And I should not see "Off" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-state=loggedoff] .preference-state-status-container" "css_element"
-    And I click on "[data-preference-key=message_provider_moodle_instantmessage] [data-state=loggedoff] .preference-state-status-container" "css_element"
+    And I should see "On" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-processor-name=email] [data-state=loggedoff] .preference-state-status-container" "css_element"
+    And I should not see "Off" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-processor-name=email] [data-state=loggedoff] .preference-state-status-container" "css_element"
+    And I click on "[data-preference-key=message_provider_moodle_instantmessage] [data-processor-name=email] [data-state=loggedoff] .preference-state-status-container" "css_element"
     And I reload the page
-    Then I should see "Off" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-state=loggedoff] .preference-state-status-container" "css_element"
+    Then I should see "Off" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-processor-name=email] [data-state=loggedoff] .preference-state-status-container" "css_element"
 
   Scenario: Alter another users preferences
     Given the following "users" exist:
@@ -26,8 +26,8 @@ Feature: Messaging preferences
     And I click on "User 1" "link"
     And I click on "Preferences" "link" in the ".profile_tree" "css_element"
     And I click on "Message preferences" "link" in the "region-main" "region"
-    And I should see "On" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-state=loggedoff] .preference-state-status-container" "css_element"
-    And I should not see "Off" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-state=loggedoff] .preference-state-status-container" "css_element"
-    And I click on "[data-preference-key=message_provider_moodle_instantmessage] [data-state=loggedoff] .preference-state-status-container" "css_element"
+    And I should see "On" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-processor-name=email] [data-state=loggedoff] .preference-state-status-container" "css_element"
+    And I should not see "Off" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-processor-name=email] [data-state=loggedoff] .preference-state-status-container" "css_element"
+    And I click on "[data-preference-key=message_provider_moodle_instantmessage] [data-processor-name=email] [data-state=loggedoff] .preference-state-status-container" "css_element"
     And I reload the page
-    Then I should see "Off" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-state=loggedoff] .preference-state-status-container" "css_element"
+    Then I should see "Off" in the "[data-preference-key=message_provider_moodle_instantmessage] [data-processor-name=email] [data-state=loggedoff] .preference-state-status-container" "css_element"
