@@ -368,7 +368,8 @@ class assign_submission_onlinetext extends assign_submission_plugin {
                     'content' => $onlinetext,
                     'cmid' => $this->assignment->get_course_module()->id,
                     'course' => $this->assignment->get_course()->id,
-                    'assignment' => $submission->assignment));
+                    'assignment' => $submission->assignment,
+                    'groupid' => property_exists($submission, 'groupid') ? $submission->groupid : '0'));
             }
             // We compare the actual text submission and the shortened version. If they are not equal, we show the word count.
             if ($onlinetext != $shorttext) {
@@ -454,7 +455,8 @@ class assign_submission_onlinetext extends assign_submission_plugin {
                     'content' => trim($onlinetextsubmission->onlinetext),
                     'cmid' => $this->assignment->get_course_module()->id,
                     'course' => $this->assignment->get_course()->id,
-                    'assignment' => $submission->assignment));
+                    'assignment' => $submission->assignment,
+                    'groupid' => property_exists($submission, 'groupid') ? $submission->groupid : '0'));
             }
         }
 
