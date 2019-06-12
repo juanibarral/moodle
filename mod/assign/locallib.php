@@ -3534,6 +3534,7 @@ class assign {
                                 foreach ($pluginfiles as $zipfilepath => $file) {
                                     $subtype = $plugin->get_subtype();
                                     $type = $plugin->get_type();
+				     setlocale(LC_ALL, 'C.UTF-8');
                                     $zipfilename = basename($zipfilepath);
                                     $prefixedfilename = clean_filename($prefix .
                                                                        '_' .
